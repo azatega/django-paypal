@@ -47,6 +47,7 @@ class PayPalPDT(PayPalStandardBase):
         SUCCESS or FAILED.
 
         """
+
         return requests.post(self.get_endpoint(),
                              data=dict(cmd="_notify-synch", at=IDENTITY_TOKEN, tx=self.tx)).content
 
@@ -68,7 +69,7 @@ class PayPalPDT(PayPalStandardBase):
                 self.st = unquoted_line
             else:
                 if self.st != "SUCCESS":
-                    warn_untested()
+                    print("NOT SUCCESS VALIDATION")
                     self.set_flag(line)
                     break
                 try:
