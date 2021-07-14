@@ -69,7 +69,6 @@ class PayPalPDT(PayPalStandardBase):
                 self.st = unquoted_line
             else:
                 if self.st != "SUCCESS":
-                    print("NOT SUCCESS VALIDATION")
                     self.set_flag(line)
                     break
                 try:
